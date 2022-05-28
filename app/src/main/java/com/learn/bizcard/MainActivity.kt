@@ -19,6 +19,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.learn.bizcard.ui.theme.BizCardTheme
 
 class MainActivity : ComponentActivity() {
@@ -58,10 +59,33 @@ fun createBizCard(){
 
                         CreateImageProfile()
                         Divider(color = Color.Red)
+
+                        CreateInfo()
+                        
+                        Button(onClick = {  }) {
+                            Text(text = "Portfolio",
+                            style = MaterialTheme.typography.button)
+                        }
                 }
         }
     }
 }
+
+@Composable
+private fun CreateInfo() {
+    Column(modifier = Modifier.padding(5.dp)) {
+        Text(
+            text = "Miles P",
+            style = MaterialTheme.typography.h4,
+            color = MaterialTheme.colors.primaryVariant
+        )
+
+        Text(
+            text = "Android Developer", modifier = Modifier.padding(3.dp)
+        )
+    }
+}
+
 
 @Composable
 private fun CreateImageProfile() {
