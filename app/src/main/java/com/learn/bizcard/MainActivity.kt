@@ -72,6 +72,26 @@ fun createBizCard(){
 }
 
 @Composable
+@Preview(showBackground = true)
+fun Content(){
+    Box(modifier = Modifier
+        .fillMaxHeight()
+        .fillMaxWidth()
+        .padding(5.dp)){
+        Surface(modifier = Modifier.padding(3.dp).
+        fillMaxWidth().fillMaxHeight(), shape = RoundedCornerShape(corner = CornerSize(6.dp)),
+        border = BorderStroke(width=2.dp, color = Color.Gray)) {
+            Portfolio(data= listOf("Project 1","Project 2","Project 3","Project 4"))
+        }
+    }
+}
+
+@Composable
+fun Portfolio(data: List<String>) {
+    Text("All Projects ")
+}
+
+@Composable
 private fun CreateInfo() {
     Column(modifier = Modifier.padding(5.dp)) {
         Text(
@@ -106,7 +126,7 @@ private fun CreateImageProfile() {
     }
 }
 
-@Preview(showBackground = true)
+
 @Composable
 fun DefaultPreview() {
     BizCardTheme {
